@@ -16,7 +16,6 @@ public:
             return NULL;
         }
         
-
         int count = 1;
 
         while (temp->next != NULL) {
@@ -33,7 +32,7 @@ public:
         }
         ListNode* temp2 = temp->next;
 
-        if(n == count && temp == head){
+        if(pos == 1){
             temp = temp->next;
             delete head;
             return temp;
