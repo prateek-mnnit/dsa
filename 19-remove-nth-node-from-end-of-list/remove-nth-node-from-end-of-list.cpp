@@ -15,9 +15,7 @@ public:
         if (head == NULL) {
             return NULL;
         }
-        if(head->next == NULL && n==1){
-            return NULL;
-        }
+        
 
         int count = 1;
 
