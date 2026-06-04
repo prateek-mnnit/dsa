@@ -25,9 +25,6 @@ public:
             if(mp.find(temp2) != mp.end()){
                 return temp2;
             }
-            else{
-                mp[temp2] = 1;
-            }
             temp2 = temp2->next;
         }
         return NULL;
