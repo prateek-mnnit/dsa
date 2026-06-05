@@ -20,9 +20,8 @@ public:
             return f(x,n);
         }
         else{
-            long long N = n;
-            N = -N;
-            return 1/f(x,N);
+            x = 1/x;
+            return f(x,n);
         }
     }
 };
