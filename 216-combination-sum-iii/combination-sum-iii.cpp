@@ -3,6 +3,10 @@ public:
     vector<vector<int>> vec;
 
     void f(int idx, int sum,int count, int k, int n, vector<int>& v, vector<int>& nums){
+        if(sum > n || count > k) {
+            return;
+        }
+        
         if(idx == 9){
             if(count == k && sum == n){
                 vec.push_back(v);
