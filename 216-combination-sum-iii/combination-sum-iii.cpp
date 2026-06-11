@@ -6,7 +6,6 @@ public:
         if(idx == 9){
             if(count == k && sum == n){
                 vec.push_back(v);
-                return;
             }
             return;
         }
