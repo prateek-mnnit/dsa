@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<string> vec;
-    void f(int idx, string temp, string digits,unordered_map<char,string>& mp ){
+    void f(int idx, string& temp, string& digits,unordered_map<char,string>& mp ){
         if(idx >= digits.size()){
             vec.push_back(temp);
             return;
