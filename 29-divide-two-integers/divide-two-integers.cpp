@@ -25,12 +25,12 @@ public:
             n = n - (d<<count);
         }
 
-        // if(ans >= (1<<31) && sign){
-        //     return INT_MAX;
-        // }
-        // if(ans >= (1<<31) && !sign){
-        //     return INT_MIN;
-        // }
+        if(ans >= (1LL<<31) && sign){
+            return INT_MAX;
+        }
+        if(ans >= (1LL<<31) && !sign){
+            return INT_MIN;
+        }
 
         
 
