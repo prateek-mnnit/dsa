@@ -1,49 +1,76 @@
 class Solution {
 public:
     int divide(int dividend, int divisor) {
-        
-        // Base case
-        if(dividend == divisor) return 1;
-        if(dividend == INT_MIN && divisor == -1) return INT_MAX;
-        if(divisor == 1) return dividend;
-        
-        // Variable to store the sign of result
-        bool isPositive = true;
-        
-        // Updating the sign of quotient
-        if(dividend >= 0 && divisor < 0) 
-            isPositive = false;
-        else if(dividend < 0 && divisor > 0)
-            isPositive = false;
-            
-        // Storing absolute dividend & divisor
-        long long n = dividend;
-        long long d = divisor;
-
-        n = abs(n);
-        d = abs(d);
-        
-        // Variable to store the answer and sum
-        long long ans = 0, sum = 0;
-        
-        /* Looping while sum added to divisor is
-        less than or equal to divisor */
-        while(sum + d <= n) {
-            
-            // Increment the count
-           ans++;
-           // Update the sum
-           sum += d;
+        if(dividend == divisor){
+            return 1;
         }
-        
-        // Handling overflowing condition
-        if(ans > INT_MAX && isPositive) 
+        if(dividend == INT_MIN && divisor == -1) return INT_MAX;
+        bool sign = true;
+
+        if(dividend < 0 && divisor > 0) sign = false;
+        else if(dividend > 0 && divisor < 0) sign = false;
+
+        long n = abs((long)dividend);
+        long d = abs((long)divisor);
+
+        long ans = 0;
+        int count = 0;
+
+        while(n >= d){
+            count = 0;
+            while((d<<(count+1)) <= n){
+                count++;
+            }
+            ans = ans + (1<<count);
+            n = n - (d<<count);
+        }
+
+        if(ans == (1<<31) && sign){
             return INT_MAX;
-        if(ans > INT_MAX && !isPositive)
+        }
+        if(ans == (1<<31) && !sign){
             return INT_MIN;
+        }
+
         
-        /* Returning the quotient 
-        with proper sign */
-        return isPositive ? ans : -1*ans;
+
+        if(sign){
+            return ans;
+        }
+        else{
+            return -ans;
+        }
+
+
+
+
+        // if (dividend == 0)
+        //     return 0;
+        // if (divisor == 1)
+        //     return dividend;
+        // if (divisor == -1) {
+        //     if (dividend == INT_MIN)
+        //         return INT_MAX;
+        //     return -dividend;
+        // }
+
+        // long long dvd = llabs((long long)dividend);
+        // long long dvs = llabs((long long)divisor);
+
+        // long long count = 0;
+
+        // while (dvd >= dvs) {
+        //     dvd -= dvs;
+        //     count++;
+        // }
+
+        // bool negative =
+        //     (dividend < 0 && divisor > 0) || (dividend > 0 && divisor < 0);
+
+        // if (negative) {
+        //     count = -count;
+        // }
+
+        // return (int)count;
     }
 };
