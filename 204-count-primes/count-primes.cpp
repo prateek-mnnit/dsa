@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isPrime(int num, vector<int>& vec, int n){
         if(vec[num]==1){
-            for(int j=num; j<n; j+=num){
+            for(int j=2*num; j<n; j+=num){
                 vec[j] = 0;
             }
             return true;
