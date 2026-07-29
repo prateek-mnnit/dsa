@@ -14,11 +14,8 @@ public:
             if(s[r] >= g[l]){
                 count++;
                 l++;
-                r++;
             }
-            else{
-                r++;
-            }
+            r++;
         }
 
         return count;
