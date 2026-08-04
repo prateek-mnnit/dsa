@@ -32,12 +32,12 @@ public:
         vector<vector<int>> ans;
 
         // Traverse columns in sorted order
-        for (auto &col : mp) {
+        for (auto col : mp) {
 
             vector<int> temp;
 
             // Traverse rows in sorted order
-            for (auto &row : col.second) {
+            for (auto row : col.second) {
 
                 // Traverse values in sorted order
                 for (auto val : row.second) {
