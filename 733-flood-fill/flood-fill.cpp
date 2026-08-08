@@ -14,14 +14,12 @@ public:
             int nr = sr + dr[i];
             int nc = sc + dc[i];
 
-            for(int j=0; j<4; j++){
                 if(nr>=0 && nr<n &&
                    nc>=0 && nc<m &&
                    image[nr][nc] == original){
 
                     dfs(nr,nc,color,image);
                 }
-            }
         }
 
     }
