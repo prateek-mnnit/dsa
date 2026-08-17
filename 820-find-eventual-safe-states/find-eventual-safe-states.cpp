@@ -3,7 +3,7 @@ public:
     bool dfs(int node, vector<vector<int>>& graph, vector<int> &vis, vector<int>& pathVis, vector<int>& check){
         vis[node] = 1;
         pathVis[node] = 1;
-
+        
         for(auto it : graph[node]){
             if(!vis[it]){
                 if(dfs(it,graph,vis,pathVis,check)){
