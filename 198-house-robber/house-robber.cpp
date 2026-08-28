@@ -1,8 +1,8 @@
 class Solution {
 public:
     int f(int idx, vector<int>& nums, vector<int>& dp){
-        if(idx == 0)
-            return nums[idx];
+        // if(idx == 0)
+        //     return nums[idx];
         if(idx < 0)
             return 0;
 
